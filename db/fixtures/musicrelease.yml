@@ -1,0 +1,14 @@
+- catalog_number: "1"
+  cid: Qm
+  context: http://schema.org/
+  created_at: 2017-10-17T16:31:50.657845-04:00
+  date_published: null
+  description: Yo
+  id: 1
+  music_release_format: CD
+  record_label_id: null
+  release_of_id: 1
+  type: MusicRelease
+  updated_at: 2017-10-17T16:31:50.657845-04:00
+  active: true
+  image_id: 1

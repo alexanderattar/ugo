@@ -1,0 +1,40 @@
+version: '3'
+services:
+  app:
+    container_name: ujo
+    build: .
+    ports: 
+      - 9001:9001 # Forward the exposed port 9001 on the container to port 9001 on the host machine
+    restart: on-failure
+    volumes:
+      - ./:$GOPATH/src/github.com/consensys/ugo
+    environment:
+      UJO_API_SECRET: CHANGE_THIS
+      DATABASE_URL: postgres://postgres:postgres@db/postgres?sslmode=disable
+    depends_on:
+      - postgres # This service depends on postgres. Start that first.
+    networks:
+      - backend
+
+  postgres:
+    image: postgres:latest
+    container_name: ujo_db
+    environment:
+      - POSTGRES_USER=${DB_USER}  
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST} 
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - backend
+
+volumes:
+  api:
+  postgres:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  backend:

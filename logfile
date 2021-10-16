@@ -1,0 +1,51 @@
+2019-12-12 16:24:48.788 EST [11158] LOG:  listening on IPv6 address "::1", port 5432
+2019-12-12 16:24:48.788 EST [11158] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-12-12 16:24:48.789 EST [11158] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-12-12 16:24:48.817 EST [11159] LOG:  database system was interrupted; last known up at 2019-12-10 23:29:29 EST
+2019-12-12 16:24:48.992 EST [11159] LOG:  database system was not properly shut down; automatic recovery in progress
+2019-12-12 16:24:48.996 EST [11159] LOG:  redo starts at 0/25B01A8
+2019-12-12 16:24:48.996 EST [11159] LOG:  invalid record length at 0/25B0288: wanted 24, got 0
+2019-12-12 16:24:48.996 EST [11159] LOG:  redo done at 0/25B0250
+2019-12-12 16:24:49.009 EST [11158] LOG:  database system is ready to accept connections
+2019-12-13 17:23:07.349 EST [19819] ERROR:  column "tr" does not exist at character 60
+2019-12-13 17:23:07.349 EST [19819] STATEMENT:  select * from mochi_report where mochi_report.is_on_time = Tr;
+2019-12-13 17:26:43.854 EST [19364] ERROR:  syntax error at or near "," at character 413
+2019-12-13 17:26:43.854 EST [19364] STATEMENT:  
+	    SELECT COUNT(*)
+	    FROM mochi_report
+	    INNER JOIN mochi_user ON mochi_event.user_id = mochi_user.id
+	    INNER JOIN mochi_membership ON mochi_membership.user_id = mochi_user.id
+	    INNER JOIN mochi_team ON mochi_team.id = mochi_membership.team_id
+	    WHERE mochi_report.is_on_time = true 
+	    AND mochi_report.is_complete = true
+	    AND mochi_report.journey IS NOT NULL
+	    AND mochi_report.paused = false,
+	    AND mochi_team.id = 1;
+	    
+2019-12-13 17:26:59.974 EST [19364] ERROR:  missing FROM-clause entry for table "mochi_event" at character 85
+2019-12-13 17:26:59.974 EST [19364] STATEMENT:  
+	        SELECT COUNT(*)
+	        FROM mochi_report
+	        INNER JOIN mochi_user ON mochi_event.user_id = mochi_user.id
+	        INNER JOIN mochi_membership ON mochi_membership.user_id = mochi_user.id
+	        INNER JOIN mochi_team ON mochi_team.id = mochi_membership.team_id
+	        WHERE mochi_report.is_on_time = true 
+	        AND mochi_report.is_complete = true
+	        AND mochi_report.journey IS NOT NULL
+	        AND mochi_report.paused = false
+	        AND mochi_team.id = 1;
+	        
+2019-12-13 17:28:04.226 EST [19364] ERROR:  column mochi_report.journey does not exist at character 378
+2019-12-13 17:28:04.226 EST [19364] HINT:  Perhaps you meant to reference the column "mochi_report.journey_id".
+2019-12-13 17:28:04.226 EST [19364] STATEMENT:  
+	        SELECT COUNT(*)
+	        FROM mochi_report
+	        INNER JOIN mochi_user ON mochi_report.user_id = mochi_user.id
+	        INNER JOIN mochi_membership ON mochi_membership.user_id = mochi_user.id
+	        INNER JOIN mochi_team ON mochi_team.id = mochi_membership.team_id
+	        WHERE mochi_report.is_on_time = true 
+	        AND mochi_report.is_complete = true
+	        AND mochi_report.journey IS NOT NULL
+	        AND mochi_report.paused = false
+	        AND mochi_team.id = 1;
+	        

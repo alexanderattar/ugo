@@ -1,0 +1,10 @@
+- album_production_type: studio
+  album_release_type: null
+  by_artist_id: 1
+  cid: Qm
+  context: http://schema.org/
+  created_at: 2017-10-17T16:31:50.654035-04:00
+  id: 1
+  name: Random Album Title
+  type: MusicAlbum
+  updated_at: 2017-10-17T16:31:50.654035-04:00

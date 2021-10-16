@@ -1,0 +1,6 @@
+- id: 1
+  musicgroup_id: 1
+  person_id: 1
+- id: 2
+  musicgroup_id: 1
+  person_id: 2

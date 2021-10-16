@@ -1,0 +1,11 @@
+- cid: V
+  context: http://schema.org/
+  created_at: 2017-10-17T16:31:47.880612-04:00
+  description: Techno
+  email: powder@gmail.com
+  id: 1
+  name: Powder
+  type: MusicGroup
+  updated_at: 2017-10-17T16:31:47.880612-04:00
+  image_id: 1
+

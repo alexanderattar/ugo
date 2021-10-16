@@ -1,0 +1,17 @@
+test:
+    dialect: postgres
+    datasource: dbname=ujo-test sslmode=disable
+    dir: db/migrations
+    table: migrations
+
+development:
+    dialect: postgres
+    datasource: dbname=ujo sslmode=disable
+    dir: db/migrations
+    table: migrations
+
+production:
+    dialect: postgres
+    datasource: dbname=ujo sslmode=disable
+    dir: db/migrations
+    table: migrations

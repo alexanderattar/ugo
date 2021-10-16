@@ -1,0 +1,30 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Docker / Makefile
+bin
+.go
+
+# Visual Studio Code
+debug
+.vscode
+
+# direnv
+.envrc
+.env

@@ -1,0 +1,12 @@
+- audio_id: 1
+  by_artist_id: 1
+  cid: Qm
+  context: http://schema.org/
+  created_at: 2017-10-17T16:31:50.656443-04:00
+  duration: null
+  id: 1
+  isrc: null
+  name: The Dopeness
+  recording_of_id: 1
+  type: MusicRecording
+  updated_at: 2017-10-17T16:31:50.656443-04:00
