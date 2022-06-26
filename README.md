@@ -8,7 +8,7 @@ locally. There is additional information in regard to running the tests and the 
 
 ### Setup environment
 
-You will need GO > 1.11 in order to run Ugo.  
+You will need GO > 1.11 in order to run Ugo.
 
 Ensure that the `GOPATH` is set in .profile or .bash_profile
 More info [here](https://golang.org/doc/code.html#GOPATH).
@@ -19,7 +19,7 @@ PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/go/bin
 ```
 
-Clone this repository somewhere.  You can either clone it inside or outside of your `GOPATH`.  If you clone it inside your `GOPATH`, you'll need to do something like the following:
+Clone this repository somewhere. You can either clone it inside or outside of your `GOPATH`. If you clone it inside your `GOPATH`, you'll need to do something like the following:
 
 ```sh
 $ mkdir -p $GOPATH/src/github.com/consensys
@@ -51,7 +51,7 @@ go mod download
 Add environment variables. Replace username with the one created in postgres.
 
 ```
-export DATABASE_URL=postgres://<username>:@localhost/ujo?sslmode=disable  
+export DATABASE_URL=postgres://<username>:@localhost/ujo?sslmode=disable
 export UJO_API_SECRET=secret
 ```
 
@@ -86,6 +86,7 @@ sql-migrate needs to be installed from inside the GOPATH in order to get the dat
 ```
 go get -v github.com/rubenv/sql-migrate/...
 ```
+
 Then: Change into the repository root directory and run sql-migrate to run database migrations. s
 
 ```
@@ -139,6 +140,7 @@ Make build
 ## Testing
 
 To set up for the tests
+
 ```
 createuser ubuntu
 ```
@@ -154,6 +156,7 @@ go test ./pkg/*/ -v
 ```
 
 To run the tests in serial, run:
+
 ```
 go test -p 1 ./pkg/*/ -v
 ```
@@ -165,7 +168,6 @@ The structure of the codebase follows the best practices outlined by Peter Bourg
 [Go best practices, 6 years in](https://peter.bourgon.org/go-best-practices-2016/#repository-structure).
 
 There are two top-level directories, pkg and cmd. Underneath pkg, there are directories for each of the project's libraries. Underneath cmd, there are directories for each of your binaries. All of the Go code should live exclusively in one of these locations. In the root directory there are various configuration / continuous integration files, and additional directories for database code and migrations. A simplified example of this looks like the following:
-
 
 ```
 github.com/consensys/ugo/
@@ -204,7 +206,7 @@ Drop all data
 go run ./db/dropdata.go
 ```
 
-**Note**:  These loaddata migrates the database up so it will fail if tables already exist. Drop the db with `dropdb <dbname>` and recreate it with `createdb <dbname>`.
+**Note**: These loaddata migrates the database up so it will fail if tables already exist. Drop the db with `dropdb <dbname>` and recreate it with `createdb <dbname>`.
 
 ## Dependencies
 
